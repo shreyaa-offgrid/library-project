@@ -15,6 +15,28 @@
         </div>
         <button class="add-new-btn">new book</button>
     </div>
+    <dialog>
+        <form action="#">
+            <div class="form-row">
+                <label for="book-title">title:</label>
+                <input type="text" id="book-title" name="title">
+            </div>
+            <div class="form-row">
+                <label for="author-name">author:</label>
+                <input type="text" id="author-name" name="author">
+            </div>
+            <div class="form-row">
+                <label for="pages">pages:</label>
+                <input type="tel" id="pages" name="pages">
+            </div>
+            <label class="read-status">
+                mark as read:
+                <input type="checkbox" name="read-status">   
+                
+            </label>   
+            <button type="submit" class="form-submit">add</button>
+        </form>
+    </dialog>
     <div class="grid-container">
         <div class="sidebar">
             <h2>your shelves:</h2>
@@ -36,10 +58,9 @@
             </ul>
         </div>
         <div class="main">
-        
+
         </div>
     </div>
-
     <script src="./script.js"></script>
 </body>
 
