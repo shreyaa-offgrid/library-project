@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <h1>Hello World</h1>
+    <div class="header">
+        <div class="app-name"><img src="./images/book-header-icon.svg" alt="a stack of books">
+            <h1>library app</h1>
+        </div>
+        <button class="add-new-btn">new book</button>
+    </div>
+    <div class="grid-container">
+        <div class="sidebar">
+            <h2>your shelves:</h2>
+            <ul>
+                <li>
+                    <div class="shelf">
+                        <div class="shelfname">read:</div>
+                        <div class="number">(0)</div>
+                    </div>
+                </li>
+                <hr>
+                <li>
+                    <div class="shelf">
+                        <div class="shelfname">unread:</div>
+                        <div class="number">(0)</div>
+                    </div>
+                </li>
+                <hr>
+            </ul>
+        </div>
+        <div class="main">
+
+        </div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
+
 </html>
