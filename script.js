@@ -6,6 +6,10 @@ function Book(title, author, pages, read, id) {
   this.id = id;
 }
 
+Book.prototype.toggleRead = function() {
+  this.read = !this.read;
+};
+
 let readCount = 0;
 let unreadCount = 0;
 const [readCountDisp, unreadCountDisp] = document.querySelectorAll(".number");
@@ -130,7 +134,7 @@ function toggleCard(e) {
   let cardID = thisCard.dataset.indexNumber;
   for(let i = 0;i<myLibrary.length;i++){
     if(myLibrary[i].id==cardID){
-      myLibrary[i].read = (myLibrary[i].read)?false:true;
+      myLibrary[i].toggleRead(); 
       break;
     }
   }
