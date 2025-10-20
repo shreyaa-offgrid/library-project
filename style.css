@@ -59,6 +59,7 @@ ul {
 
 .add-new-btn:hover,.form-submit:hover {
     background-color: #0F5A11;
+    cursor: pointer;
 }
 
 .add-new-btn:active,.form-submit:active {
@@ -105,7 +106,7 @@ ul {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     background-color: #E6D8C3;
     border-left: 1em #B1AB86 solid;
@@ -115,11 +116,66 @@ ul {
 }
 
 .card h3 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .card p {
-    font-size: 2em;
+    font-size: 1.2em;
+}
+
+.button-div{
+    display: flex;
+    gap: 2em;
+}
+
+.toggle-btn{
+    font-size: 1em;
+    background-color:#0A400C;
+    color: white;
+    font-family: "Roboto";
+    border: 1px white solid;
+    padding: 0.5em;
+    border-radius: 1em;
+    min-width: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.remove-btn{
+    font-size: 1em;
+    background-color: red;
+    color: white;
+    font-family: "Roboto";
+    border: 1px white solid;
+    padding: 0.5em;
+    border-radius: 1em;
+    min-width: 3em;
+    font-weight: bold;
+}
+
+.remove-btn:hover{
+    cursor: pointer;
+    background-color:#AA2F33 ;
+}
+
+.remove-btn:active{
+    transform: scale(1.05);
+}
+
+.toggle-btn:hover{
+    cursor: pointer;
+    background-color:#0F5A11 ;
+}
+
+.toggle-btn:active{
+    transform: scale(1.05);
+}
+.read{
+    box-shadow: 5px 5px 5px rgba(41, 174, 45, 0.6);
+}
+
+.unread{
+    box-shadow: 5px 5px 5px rgba(223, 37, 17, 0.663);
 }
 
 dialog {
@@ -149,6 +205,7 @@ dialog input {
     width: 15em;
     border: none;
     border-radius: 1em;
+    padding: 0.5em;
 }
 
 .read-status {
@@ -183,5 +240,8 @@ dialog button {
 ::backdrop {
     background-color: rgb(10, 64, 12, 0.6);
 }
+
+
+
 
 

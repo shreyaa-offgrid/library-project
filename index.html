@@ -10,7 +10,7 @@
 
 <body>
     <div class="header">
-        <div class="app-name"><img src="./images/book-header-icon.svg" alt="a stack of books">
+        <div class="app-name"><img src="./images/bookmark-header-icon.svg" alt="a stack of books">
             <h1>library app</h1>
         </div>
         <button class="add-new-btn">new book</button>
@@ -19,19 +19,19 @@
         <form action="#">
             <div class="form-row">
                 <label for="book-title">title:</label>
-                <input type="text" id="book-title" name="title">
+                <input type="text" id="book-title" name="title" required>
             </div>
             <div class="form-row">
                 <label for="author-name">author:</label>
-                <input type="text" id="author-name" name="author">
+                <input type="text" id="author-name" name="author" required>
             </div>
             <div class="form-row">
                 <label for="pages">pages:</label>
-                <input type="tel" id="pages" name="pages">
+                <input type="tel" id="pages" name="pages" required>
             </div>
             <label class="read-status">
                 mark as read:
-                <input type="checkbox" name="read-status">   
+                <input type="checkbox" name="read-status" required>   
                 
             </label>   
             <button type="submit" class="form-submit">add</button>
@@ -44,14 +44,14 @@
                 <li>
                     <div class="shelf">
                         <div class="shelfname">read:</div>
-                        <div class="number">(0)</div>
+                        <div class="number">(4)</div>
                     </div>
                 </li>
                 <hr>
                 <li>
                     <div class="shelf">
                         <div class="shelfname">unread:</div>
-                        <div class="number">(0)</div>
+                        <div class="number">(3)</div>
                     </div>
                 </li>
                 <hr>
