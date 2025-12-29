@@ -27,6 +27,8 @@ class Library {
   }
 
   createCard(book) {
+    let cardContainer = document.createElement("div");
+    cardContainer.className= "card-container";
     let card = document.createElement("div");
     card.setAttribute("data-index-number", book.id);
     let bookname = document.createElement("h3");
@@ -51,15 +53,11 @@ class Library {
       toggleBtn.textContent = "mark as read?";
       card.classList.add("unread");
     }
-
-    card.appendChild(bookname);
-    card.appendChild(authorname);
-    card.appendChild(pagesinbook);
-    buttonDiv.appendChild(toggleBtn);
-    buttonDiv.appendChild(removeBtn);
-    card.appendChild(buttonDiv);
+    buttonDiv.append(toggleBtn, removeBtn);
+    card.append(bookname, authorname, pagesinbook, buttonDiv);
+    cardContainer.appendChild(card);
     const gridcontainer = document.querySelector(".main");
-    gridcontainer.appendChild(card);
+    gridcontainer.appendChild(cardContainer);
     this.updateCounts();
   }
 

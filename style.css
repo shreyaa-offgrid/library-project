@@ -10,7 +10,7 @@ h4,
 p,
 ul,
 li,
-body {
+body{
     padding: 0;
     margin: 0;
 }
@@ -24,36 +24,35 @@ ul {
     align-items: center;
     justify-content: space-between;
     background-color: #B1AB86;
-    padding: 1em 2em 1em 0;
+    padding: 0.5em 1em 0.5em 0;
     font-family: "Roboto";
 }
 
 .header h1 {
     color: #0A400C;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .app-name {
     display: flex;
     align-items: center;
-    gap: 2em;
-    margin: 1em;
+    gap: 1em;
+    margin: 0.5em;
 }
 
 .app-name img {
-    width: 5.5em;
-    /*filter: invert(1) brightness(2);*/
+    width: 3.5em;
 }
 
 .add-new-btn {
-    height: 4em;
-    padding: 0.5em 2em;
+    height: 3em;
+    padding: 0.5em 1em;
     border: none;
     border-radius: 1em;
     background-color: #0A400C;
     color: white;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: "Roboto";
 }
 
@@ -68,21 +67,31 @@ ul {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr;
-    min-height: 85vh;
+    grid-template-columns: repeat(6, 1fr);
+    min-height: 87.5vh;
+}
+
+.sidebar-container{
+    grid-column: 1/2;
+    background-color: #819067;
+}
+
+.main-container{
+    grid-column: 2/7;
+    background-color: #FEFAE0;
+    padding: 1em;
 }
 
 .sidebar {
     color: #0A400C;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: "Roboto";
-    padding: 0.5em 1.5em;
-    background-color: #819067;
+    padding: 0.5em 1em;
 }
 
 .sidebar h2 {
-    margin-bottom: 1em;
+    margin: 1em 0;
+    font-size: 1.2em;
 }
 
 .shelf {
@@ -92,15 +101,10 @@ ul {
 }
 
 .main {
-    padding: 1em;
-    grid-column: 2/6;
-    background-color: #FEFAE0;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1em;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4em;
     grid-auto-flow: row;
-    grid-auto-rows: 145px;
 }
 
 .card {
@@ -112,20 +116,22 @@ ul {
     border-left: 1em #B1AB86 solid;
     border-radius: 1em;
     color: #0A400C;
-    padding: 1em;
+    padding: 0.5em;
+    height: 25vh;
 }
 
 .card h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .card p {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .button-div{
     display: flex;
-    gap: 2em;
+    gap: 1em;
+    align-items: center;
 }
 
 .toggle-btn{
@@ -134,9 +140,9 @@ ul {
     color: white;
     font-family: "Roboto";
     border: 1px white solid;
-    padding: 0.5em;
-    border-radius: 1em;
-    min-width: 3em;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    height: 2.5em;
     font-weight: bold;
     text-align: center;
 }
@@ -147,9 +153,10 @@ ul {
     color: white;
     font-family: "Roboto";
     border: 1px white solid;
-    padding: 0.5em;
-    border-radius: 1em;
-    min-width: 3em;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    height: 2.5em;
+    width: 2.5em;
     font-weight: bold;
 }
 
@@ -170,12 +177,13 @@ ul {
 .toggle-btn:active{
     transform: scale(1.05);
 }
+
 .read{
     box-shadow: 5px 5px 5px rgba(41, 174, 45, 0.6);
 }
 
 .unread{
-    box-shadow: 5px 5px 5px rgba(223, 37, 17, 0.663);
+    box-shadow: 5px 5px 5px rgba(223, 37, 17, 0.6);
 }
 
 dialog {
@@ -185,11 +193,12 @@ dialog {
 
 form {
     font-family: "Roboto";
-    padding: 2em;
-    font-size: 2em;
+    padding: 1em;
+    font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    width: 75vh;
+    height: 40vh;
+    width: 40vw;
 }
 
 .form-row {
@@ -201,10 +210,10 @@ form {
 
 dialog input {
     background-color: #E6D8C3;
-    font-size: 1em;
-    width: 15em;
+    font-size: 0.7em;
+    width: 60%;
     border: none;
-    border-radius: 1em;
+    border-radius: 0.5em;
     padding: 0.5em;
 }
 
@@ -227,14 +236,14 @@ dialog label {
 dialog button {
     font-family: "Roboto";
     font-size: 1em;
-    height: 1.5em;
-    width: 7em;
-    margin-right: auto;
+    height: 2em;
+    padding: 0.5em;
     border: none;
     background-color: #0A400C;
     color: white;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-weight: bold;
+    align-self: flex-end;
 }
 
 ::backdrop {
