@@ -28,7 +28,7 @@ class Library {
 
   createCard(book) {
     let cardContainer = document.createElement("div");
-    cardContainer.className= "card-container";
+    cardContainer.className = "card-container";
     let card = document.createElement("div");
     card.setAttribute("data-index-number", book.id);
     let bookname = document.createElement("h3");
@@ -120,14 +120,34 @@ const dialog = document.querySelector("dialog");
 const openBtn = document.querySelector(".add-new-btn");
 const closeBtn = document.querySelector(".form-submit");
 const gridcontainer = document.querySelector(".main");
+
 const pages = document.getElementById("pages");
-pages.addEventListener("input",()=>{
-  if(pages.validity.badInput){
-    pages.setCustomValidity("Pages must be a number :(");
-  }else{
+pages.addEventListener("input", () => {
+  if (pages.validity.valueMissing) {
+    pages.setCustomValidity("Please enter number of pages");
+  } else if (pages.validity.badInput) {
+    pages.setCustomValidity("Pages must be a number");
+  } else if (pages.validity.stepMismatch) {
+    pages.setCustomValidity("Pages must be a whole number");
+  } else if (pages.validity.rangeUnderflow) {
+    pages.setCustomValidity("Book must have at least 1 page");
+  } else if (pages.validity.rangeOverflow) {
+    pages.setCustomValidity("Pages seem unrealistically high");
+  } else {
     pages.setCustomValidity("");
   }
-})
+});
+
+
+const title = document.getElementById("book-title");
+title.addEventListener("input", () => {
+  if (title.value.trim().length === 0) {
+    title.setCustomValidity("Title cannot be empty or whitespace");
+  } else {
+    title.setCustomValidity("");
+  }
+});
+
 
 openBtn.addEventListener("click", function () {
   dialog.showModal();
@@ -137,7 +157,7 @@ openBtn.addEventListener("click", function () {
 closeBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const form = document.querySelector("form");
-  if(!form.reportValidity()){
+  if (!form.reportValidity()) {
     return;
   }
   dialog.close();
