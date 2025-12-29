@@ -72,7 +72,7 @@ class Library {
     let thisCard = e.target.parentElement.parentElement;
     let cardID = thisCard.dataset.indexNumber;
     this.myLibrary.splice(this.myLibrary.findIndex(book => book.id === cardID), 1);
-    thisCard.remove();
+    thisCard.parentElement.remove();
     this.updateCounts();
   }
 
