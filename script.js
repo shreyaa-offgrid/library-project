@@ -36,7 +36,7 @@ class Library {
     let pagesinbook = document.createElement("p");
     let buttonDiv = document.createElement("div");
     let removeBtn = document.createElement("button");
-    let toggleBtn = document.createElement("div");
+    let toggleBtn = document.createElement("button");
 
     bookname.textContent = book.title;
     authorname.textContent = "By " + book.author;
@@ -47,10 +47,10 @@ class Library {
     toggleBtn.classList.add("toggle-btn");
     removeBtn.textContent = "X";
     if (book.read) {
-      toggleBtn.textContent = "mark as unread?";
+      toggleBtn.textContent = "mark as unread";
       card.classList.add("read");
     } else {
-      toggleBtn.textContent = "mark as read?";
+      toggleBtn.textContent = "mark as read";
       card.classList.add("unread");
     }
     buttonDiv.append(toggleBtn, removeBtn);
@@ -120,20 +120,33 @@ const dialog = document.querySelector("dialog");
 const openBtn = document.querySelector(".add-new-btn");
 const closeBtn = document.querySelector(".form-submit");
 const gridcontainer = document.querySelector(".main");
+const pages = document.getElementById("pages");
+pages.addEventListener("input",()=>{
+  if(pages.validity.badInput){
+    pages.setCustomValidity("Pages must be a number :(");
+  }else{
+    pages.setCustomValidity("");
+  }
+})
 
 openBtn.addEventListener("click", function () {
   dialog.showModal();
 });
 
+
 closeBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  const form = document.querySelector("form");
+  if(!form.reportValidity()){
+    return;
+  }
   dialog.close();
-  const title = document.getElementById("book-title").value.trim();
+  const titleEl = document.getElementById("book-title");
+  const title = titleEl.value.trim();
   const author = document.getElementById("author-name").value.trim();
   const pages = document.getElementById("pages").value.trim();
   const read = document.querySelector(".read-status>input").checked;
   libraryObj.addBookToLibrary(title, author, pages, read);
-  const form = document.querySelector("form");
   form.reset();
 });
 
